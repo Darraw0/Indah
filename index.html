@@ -1,0 +1,798 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portofolio Indah Nur Cahyani</title>
+
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- POP-UP LIRIK DAN MAKNA LAGU -->
+<div class="song-modal-overlay" id="songModal" hidden>
+    <div
+        class="song-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="songModalTitle">
+
+        <button
+            type="button"
+            class="song-modal-close"
+            id="songModalClose"
+            aria-label="Tutup pop-up">
+            ×
+        </button>
+
+        <p class="song-modal-label">MASIH SEPERTI DULU</p>
+
+        <h2 id="songModalTitle">Lirik Lagu</h2>
+
+        <div class="song-modal-content" id="songModalContent">
+        </div>
+    </div>
+</div>
+
+<!-- POP-UP PREVIEW KARYA DESAIN -->
+<div class="artwork-modal-overlay" id="artworkModal" hidden>
+    <div
+        class="artwork-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="artworkModalTitle"
+    >
+        <button
+            type="button"
+            class="artwork-modal-close"
+            id="artworkModalClose"
+            aria-label="Tutup preview"
+        >×</button>
+
+        <p class="artwork-modal-label">MY CREATIVE WORK</p>
+        <h2 id="artworkModalTitle">Desain Saya</h2>
+
+        <div class="artwork-modal-content" id="artworkModalContent">
+        </div>
+    </div>
+</div>
+
+    <!-- Seluruh isi website kamu di sini -->
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+ 
+<div id="introScreen" class="intro-screen">
+
+  <!-- VIDEO BACKGROUND -->
+  <video class="intro-video" autoplay muted loop playsinline>
+    <source src="videos/intro-rain.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video.
+  </video>
+
+  <!-- LAPISAN GELAP AGAR TEKS TERBACA -->
+  <div class="intro-video-overlay"></div>
+
+
+
+
+  <nav class="intro-nav">
+    <span>Darrachan Portfolio</span>
+    <div>
+    <span data-id="Home" data-en="Home">Home 　 </span>
+
+    <span data-id="Tentang Saya" data-en="About">About　 </span>
+    <span data-id="Portofolio" data-en="Portfolio">Portfolio　 </span>
+    <span data-id="Kontak" data-en="Contact">Contact　 </span>
+</div>
+  </nav>
+
+
+
+
+
+
+  <div class="intro-center">
+    <p class="intro-eyebrow"
+   data-id="✦ — SELAMAT DATANG DI — ✦"
+   data-en="✦ — WELCOME TO — ✦">
+   ✦ — SELAMAT DATANG DI — ✦
+</p>
+    <h1>Perjalanan Kreatif<br><span>Saya✦</span></h1>
+    <p>
+      Discover my story, skills, and creative works.<br>
+      
+    </p>
+
+
+    <button id="enterHomeButton" type="button" data-id="✦ Jelajahi Portfolio Saya →" data-en="✦ Explore My Portfolio →">
+    ✦ &nbsp; Jelajahi Portfolio Saya &nbsp; →
+</button>
+  </div>
+
+  <div class="intro-footer" data-id="Gulir untuk menjelajahi lebih banyak →" data-en="Scroll to discover more →">Gulir untuk menjelajahi lebih banyak →</div>
+
+  <div class="intro-curtain curtain-left"></div>
+  <div class="intro-curtain curtain-right"></div>
+
+</div>
+
+     
+<!-- NAVIGASI -->
+<header>
+    <nav>
+        <a href="#home" class="logo">Darrachan</a>
+
+        <ul>
+            
+            <li><a href="#about">Tentang Saya</a></li>
+            <li><a href="#pendidikan">Pendidikan</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#hobi">Hobbi</a></li>
+            <li><a href="#project">Projek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+
+
+        <!-- TOMBOL TEMA -->
+        <button id="theme-toggle" class="theme-toggle"
+                type="button" aria-label="Ganti tema">
+            🌙
+        </button>
+
+<!-- MUSIC PLAYER -->
+<div class="music-player">
+    <button
+        type="button"
+        id="musicToggle"
+        class="music-toggle"
+        aria-label="Buka pemutar musik"
+        aria-expanded="false"
+        aria-controls="musicDropdown">
+        🎵
+    </button>
+
+    <div id="musicDropdown" class="music-dropdown" hidden>
+        <h3>♫ My Little Playlist</h3>
+        <p class="music-subtitle">A little music for your visit ♡</p>
+
+        <div class="music-track-list">
+            <button type="button" class="music-track"
+                    data-src="music/lagu5.mp4">
+                <span>🎧</span>
+                <span>
+                    <strong>Relaxing Time</strong>
+                    <small>Chill &amp; Relax</small>
+                </span>
+            </button>
+
+            <button type="button" class="music-track"
+                    data-src="music/lagu2.mpeg">
+                <span>🎶</span>
+                <span>
+                    <strong>My Favorite Song</strong>
+                    <small>Favorite Playlist</small>
+                </span>
+            </button>
+
+            <button type="button" class="music-track"
+                    data-src="music/lagu4.mp4">
+                <span>💜</span>
+                <span>
+                    <strong>Sweet Memories</strong>
+                    <small>Soft &amp; Dreamy</small>
+                </span>
+            </button>
+        </div>
+
+        <div class="music-controls">
+            <span id="musicStatus">Pilih lagu untuk memulai</span>
+            <button type="button" id="musicPlayPause"
+                    aria-label="Play atau pause musik">▶</button>
+        </div>
+
+        <audio id="portfolioAudio" preload="none"></audio>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- MENU TITIK TIGA -->
+        <div class="more-menu">
+            <button type="button"
+                    class="more-menu-button"
+                    id="moreMenuButton"
+                    aria-label="Buka menu tambahan"
+                    aria-expanded="false"
+                    aria-controls="moreMenuDropdown">
+                ⋮
+            </button>
+
+            <div class="more-menu-dropdown" id="moreMenuDropdown" hidden>
+
+               <button type="button" class="more-menu-item" id="themeMenuButton">
+    👤 <span id="profileMenuName">Profil Pengguna</span>
+</button>
+
+<div id="visitorProfile">
+    <p>👋 Halo, <strong id="visitorName">Pengunjung</strong>!</p>
+
+    <label for="visitorNameInput">Nama kamu:</label>
+    <input
+        type="text"
+        id="visitorNameInput"
+        placeholder="Masukkan nama kamu"
+        maxlength="40"
+    >
+
+    <button type="button" id="saveVisitorName">Simpan Nama</button>
+</div>
+
+                <a class="more-menu-item" href="new/cv.pdf" download>
+                    📄 <span>Unduh CV</span>
+                </a>
+
+                <button type="button" class="more-menu-item" id="shareMenuButton">
+                    🔗 <span>Bagikan Portofolio</span>
+                </button>
+
+                <div class="menu-divider"></div>
+
+                <button type="button" class="more-menu-item" id="aboutMenuButton">
+                    ✨ <span>Tentang Website</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+    <!-- KONTEN UTAMA -->
+    <main>
+
+
+<!-- HOME -->
+<section id="home">
+    <div class="home-content">
+        <p class="home-label">HALO, Nama Saya</p>
+
+        <h1>Indah Nur Cahyani</h1>
+
+        <h2>Passion for Creativity & Technology.</h2>
+        <p class="home-description">
+        <span id="typing-description"></span>
+        <span class="typing-cursor">|</span>
+       </p>
+
+        <a href="#about" class="home-button">Discover My Story →</a>
+    </div>
+
+    <div class="home-image">
+        <img src="img/poto.jpeg"
+             alt="Foto profil Indah Nur Cahyani"
+             class="foto-profil">
+    </div>
+</section>
+
+        <!-- TENTANG SAYA -->
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>
+              Saya merupakan mahasiswi semester 5 Program Studi Teknik Informatika di Universitas Indraprasta PGRI yang memiliki ketertarikan pada desain visual, pengembangan website, dan teknologi digital. Saya senang mengeksplorasi ide kreatif serta menggabungkan unsur estetika dan teknologi untuk menghasilkan karya yang menarik, fungsional, dan mudah digunakan.  
+            </p>
+
+            <p>
+             Saat ini, saya sedang mempelajari dasar-dasar pengembangan web menggunakan HTML, CSS, dan JavaScript untuk memahami proses membangun serta merancang tampilan website. Saya juga sedang mendalami UI/UX Design, khususnya dalam memahami kebutuhan pengguna, menyusun tata letak antarmuka, serta menciptakan pengalaman pengguna yang nyaman, intuitif, dan menarik secara visual. 
+            </p>
+             
+            <p>
+                Saya percaya bahwa proses belajar merupakan bagian penting dalam mengembangkan potensi diri. Oleh karena itu, saya terus mengasah keterampilan, mengeksplorasi ide-ide baru, dan terbuka terhadap berbagai pengalaman yang dapat menambah wawasan. Ke depannya, saya ingin terus berkembang dalam bidang desain dan pengembangan web serta menghasilkan karya digital yang kreatif, inovatif, dan memberikan manfaat bagi penggunanya.
+            </p>
+
+        </section>
+
+       
+<!-- PENDIDIKAN -->
+<section id="pendidikan & pengalaman">
+    <h2>Pendidikan & Pengalaman</h2>
+
+    <div class="education-card">
+        <h3>Universitas Indraprasta PGRI</h3>
+        <p>Mahasiswi semester 5 Program Studi Teknik Informatika yang mempelajari berbagai bidang teknologi, mulai dari dasar pemrograman, pengembangan website menggunakan HTML, CSS, dan JavaScript, hingga perancangan antarmuka pengguna (UI/UX). Selain itu, pembelajaran Teknik Informatika juga mencakup algoritma dan struktur data, basis data, serta analisis dan perancangan sistem informasi.</p>
+        <p>2024 sampai sekarang</p>
+    </div>
+
+    <div class="education-card">
+        <h3>SMAN 62 Jakarta</h3>
+        <p>Menempuh pendidikan Sekolah Menengah Atas (SMA) pada bidang Ilmu Pengetahuan Sosial (IPS), dengan mempelajari berbagai mata pelajaran seperti ekonomi, sosiologi, geografi, dan sejarah. Selama masa pendidikan, saya mendalami konsep kegiatan ekonomi, interaksi sosial, kondisi geografis, serta perkembangan sejarah yang berkaitan dengan kehidupan masyarakat dan lingkungan. Selain kegiatan akademik, saya juga mengikuti ekstrakurikuler basket sebagai bagian dari kegiatan sekolah, yang memberikan pengalaman dalam olahraga tim dan kerja sama bersama rekan satu tim.</p>
+        <p>2021-2024</p>
+    </div>
+
+   
+</section>
+
+        <!-- SKILLS -->
+<section id="skills">
+    <h2>My Skills</h2>
+    <p class="skills-intro">
+        Beberapa kemampuan yang sedang saya kembangkan
+        untuk mendukung kreativitas dan pembelajaran di bidang teknologi.
+    </p>
+
+    <div class="skills-container">
+        <div class="skill-card">
+            <span class="skill-icon">🎨</span>
+            <h3>Desain Visual</h3>
+            <p>Mengembangkan konsep visual melalui perpaduan warna, tipografi, komposisi, dan elemen grafis untuk menghasilkan desain yang menarik, harmonis, serta sesuai dengan tujuan komunikasi. Tertarik mengeksplorasi berbagai gaya desain untuk kebutuhan branding, promosi, dan konten digital.
+          
+                <div class="project-tags">
+                    <span>Graphic Design</span>
+                    <span>Typography</span>
+                    <span>Visual Composition</span>
+                </div>
+            </div>
+
+        <div class="skill-card">
+            <span class="skill-icon">📸</span>
+            <h3>Editing Foto & Video</h3>
+            <p>Mengolah foto dan video menjadi konten visual yang lebih menarik melalui penyesuaian warna, pemilihan komposisi, pemotongan klip, transisi, serta penyelarasan musik. Berfokus pada penyampaian pesan yang kreatif dan tampilan visual yang sesuai dengan kebutuhan konten.
+
+                <div class="project-tags">
+                    <span>Photo Editing</span>
+                    <span>Video Editing</span>
+                    <span>Content Creation</span>
+                </div>
+            </div>
+
+        <div class="skill-card">
+            <span class="skill-icon">✦</span>
+            <h3>UI/UX Design</h3>
+            <p>Sedang mempelajari prinsip UI/UX Design untuk memahami cara merancang antarmuka digital yang menarik, intuitif, dan mudah digunakan. Mulai mengeksplorasi tata letak, konsistensi elemen visual, navigasi, serta pengalaman pengguna agar desain tidak hanya terlihat baik, tetapi juga nyaman digunakan.
+
+                <div class="project-tags">
+                    <span>UI Design</span>
+                    <span>UX Fundamentals</span>
+                    <span>Layout Design</span>
+                </div>
+            </div>
+
+        <div class="skill-card">
+            <span class="skill-icon">💻</span>
+            <h3>Web Development</h3>
+            <p>Sedang mempelajari dasar-dasar pengembangan website menggunakan HTML, CSS, dan JavaScript. Berlatih menyusun struktur halaman, mengatur tampilan dan responsivitas, serta memahami interaksi sederhana agar dapat membangun website yang informatif, menarik, dan dapat diakses melalui berbagai perangkat.
+
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+    </div>
+</section>
+
+        <!-- HOBI -->
+         
+<section id="hobi">
+    <div class="hobi-wrapper">
+        <div class="hobi-content">
+            <span class="hobi-label">MY CREATIVE SIDE</span>
+            <h2>My Hobbi</h2>
+
+            <p>
+                Saya memiliki beberapa hobi yang saya sukai, di antaranya bernyanyi, bermain gitar, mengedit foto dan video, serta bermain game Mobile Legends. Saya suka bernyanyi dan bermain gitar karena musik bisa membuat saya merasa lebih rileks sekaligus menjadi cara untuk mengekspresikan diri. Selain itu, saya juga senang mengedit foto dan video menggunakan CapCut. Saya suka mencoba berbagai efek, mengatur warna, dan menyesuaikan musik agar hasil editan terlihat menarik dan estetik. Di waktu luang, saya juga suka sekali bermain Mobile Legends karena permainannya seru dan menantang. Saya senang menyusun strategi dan bermain bersama teman-teman. Bagi saya, hobi bukan hanya untuk mengisi waktu luang, tetapi juga menjadi cara untuk bersenang-senang, mengembangkan kreativitas, dan melakukan hal-hal yang saya sukai.
+            </p>
+        </div>
+
+        <div class="hobi-visual" aria-hidden="true">
+            <span class="music-note note-one">♫</span>
+            <span class="music-note note-two">♪</span>
+            <span class="music-note note-three">♬</span>
+
+            <div class="music-disc">
+                <div class="disc-center">♫</div>
+            </div>
+
+            <div class="music-bars">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- PROJECT -->
+<section id="project">
+    <h2>My Project</h2>
+    <p class="project-intro">
+        Kumpulan proyek dan karya kreatif saya
+    </p>
+
+    <div class="project-container">
+
+        <!-- KOLOM KIRI -->
+        <div class="project-column">
+
+            <!-- PROJECT 01: WEBSITE PORTOFOLIO -->
+            <div class="project-card">
+                <div class="project-icon">💻</div>
+                <p class="project-category">PENGEMBANGAN WEB</p>
+                <h3>Website Portofolio Pribadi</h3>
+                <p>
+                    Membuat website menggunakan HTML, CSS, dan JavaScript
+                    untuk memperkenalkan diri, pendidikan, keterampilan,
+                    dan hasil karya.
+                </p>
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+
+            
+
+            <!-- PROJECT 04: ARGASTA MAHESWARA -->
+            <div class="project-card wattpad-project">
+                <div class="project-icon">📖</div>
+                <span class="project-label">CREATIVE WRITING</span>
+                <h3>Argasta Maheswara</h3>
+                <p>
+                    Sebuah karya fiksi bergenre romance yang saya tulis
+                    dan publikasikan di Wattpad, dan saat ini masih dalam
+                    proses pengembangan. Melalui cerita ini, saya
+                    mengeksplorasi kreativitas dalam merangkai alur,
+                    membangun karakter, serta menyampaikan emosi melalui
+                    narasi dan dialog. Proyek ini juga menjadi ruang bagi
+                    saya untuk mengembangkan kemampuan menulis, menuangkan
+                    ide, dan menciptakan cerita yang dapat membangun
+                    keterikatan emosional dengan pembaca.
+                </p>
+                <div class="project-tags">
+                    <span>Romance</span>
+                    <span>Storytelling</span>
+                    <span>Creative Writing</span>
+                </div>
+                <a href="https://www.wattpad.com/story/386971243-argasta-maheswara"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="wattpad-link">
+                    📖 Baca di Wattpad ↗
+                </a>
+            </div>
+
+            <!-- PROJECT 04: VIDEO EDITING -->
+            <div class="project-card video-project-card">
+                <div class="project-icon">🎮</div>
+                <p class="project-category">CREATIVE VIDEO</p>
+                <h3>Video Editing</h3>
+                <div class="video-preview">
+                    <video controls preload="metadata">
+                        <source src="videos/video-edit.mp4" type="video/mp4">
+                        Browser kamu tidak mendukung pemutaran video.
+                    </video>
+                </div>
+                <p>
+                    Hasil karya editing video saya yang menggabungkan
+                    musik, transisi, dan visual kreatif untuk menghasilkan
+                    video yang menarik dan estetik.
+                </p>
+                <div class="project-tags">
+                    <span>CapCut</span>
+                    <span>Video Editing</span>
+                </div>
+            </div>
+
+        </div>
+        <!-- AKHIR KOLOM KIRI -->
+
+        <!-- KOLOM KANAN -->
+        <div class="project-column">
+
+
+<!-- PROJECT 06: POSTER IDUL FITRI -->
+<div class="project-card poster-project-card">
+    <div class="project-icon">🌙</div>
+
+    <p class="project-category">GRAPHIC DESIGN</p>
+    <h3>Desain Poster Idul Fitri</h3>
+
+    <p>
+        Desain poster ucapan Selamat Hari Raya Idul Fitri
+        1446 H yang saya buat pada tahun 2025 berdasarkan
+        permintaan seorang teman.
+    </p>
+
+    <button
+        type="button"
+        class="show-artwork-btn"
+        onclick="toggleArtwork('posterArtwork', this)">
+        👁 Lihat Poster
+    </button>
+
+    <div id="posterArtwork" class="artwork-preview" hidden>
+        <img
+            src="img/poster-idul-fitri-202.jpeg"
+            alt="Poster Idul Fitri 1446 H untuk Al-Falah Futsal Club">
+    </div>
+
+    <div class="project-tags">
+        <span>Graphic Design</span>
+        <span>Poster Design</span>
+        <span>2025</span>
+    </div>
+</div>
+
+
+<!-- PROJECT 07: DESAIN BACKGROUND LAPTOP -->
+<div class="project-card laptop-project-card">
+    <div class="project-icon">🪐</div>
+
+    <p class="project-category">DIGITAL ART</p>
+    <h3>Desain Background Laptop</h3>
+
+    <p>
+        Desain background laptop bertema luar angkasa
+        yang saya buat pada tahun 2025 untuk mengisi
+        waktu luang, dengan perpaduan ilustrasi planet,
+        astronaut, dan nuansa monokrom.
+    </p>
+
+    <button
+        type="button"
+        class="show-artwork-btn"
+        onclick="toggleArtwork('laptopArtwork', this)">
+        👁 Lihat Desain
+    </button>
+
+    <div id="laptopArtwork" class="artwork-preview" hidden>
+        <img
+            src="img/background-laptop-2025.jpeg"
+            alt="Desain background laptop bertema luar angkasa">
+    </div>
+
+    <div class="project-tags">
+        <span>Digital Art</span>
+        <span>Photo Editing</span>
+        <span>2025</span>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- MOTIVATION SECTION -->
+<section id="motivation">
+    <div class="motivation-container">
+
+        <div class="motivation-image">
+            <img src="img/motivasi.jpeg"
+                 alt="Pemandangan yang menenangkan">
+        </div>
+
+        <div class="motivation-content">
+            <p class="motivation-label">
+                A LITTLE REMINDER FOR MYSELF
+            </p>
+
+            <h2>Pelan-pelan, Aku Juga Sedang Bertumbuh.</h2>
+
+            <p>
+                Tidak semua hal harus selesai hari ini.
+                Ada kalanya aku perlu berhenti sebentar,
+                menarik napas, dan mengingat bahwa setiap
+                orang punya waktunya masing-masing. Aku
+                mungkin belum sehebat orang lain, belum
+                memiliki semua hal yang aku impikan, dan
+                terkadang masih merasa bingung dengan
+                jalan yang sedang aku pilih. Namun, itu
+                bukan berarti aku gagal.
+            </p>
+
+            <p>
+                Aku sedang belajar, mencoba, memperbaiki
+                kesalahan, dan mengumpulkan pengalaman
+                sedikit demi sedikit. Setiap proses yang
+                terasa sulit tetap mengajarkanku sesuatu.
+                Aku ingin terus berkembang, berani mencoba
+                hal baru, dan tidak menyerah hanya karena
+                perjalanan ini terasa lambat.
+            </p>
+
+            <p>
+                Suatu hari nanti, aku ingin melihat kembali
+                diriku yang sekarang dengan bangga, karena
+                ternyata aku mampu melewati banyak hal
+                yang dulu terasa mustahil. Aku ingin terus
+                melangkah, meskipun perlahan, sampai bisa
+                mencapai hal-hal yang selama ini aku impikan.
+            </p>
+
+            <blockquote>
+                "Aku tidak harus menjadi sempurna untuk
+                bisa merasa bangga pada diriku sendiri."
+            </blockquote>
+        </div>
+
+    </div>
+</section>
+<!-- AKHIR MOTIVATION SECTION -->
+
+<section id="contact">
+    <h2>Kontak Saya</h2>
+    <p>
+        Terima kasih sudah mengunjungi portofolio saya.
+        Silakan hubungi saya melalui kontak berikut
+        atau kirim pesan langsung melalui formulir di bawah.
+    </p>
+
+    <div class="contact-list">
+
+        <a href="mailto:indahnc1908@gmail.com" class="contact-item">
+            <span>✉</span>
+            <div>
+                <h3>Gmail</h3>
+                <p>indahnc1908@gmail.com</p>
+            </div>
+        </a>
+
+        <a href="https://www.instagram.com/ndahhw00/"
+           target="_blank" rel="noopener noreferrer"
+           class="contact-item">
+            <span>◎</span>
+            <div>
+                <h3>Instagram</h3>
+                <p>@ndahhw00</p>
+            </div>
+        </a>
+
+
+        <a href="https://www.tiktok.com/@darra0w0?_r=1&_t=ZS-9AXf4dTsG4T"
+           target="_blank" rel="noopener noreferrer"
+           class="contact-item">
+            <span>ᕷ️</span>
+            <div>
+                <h3>Tiktok</h3>
+                <p>darra0w0</p>
+            </div>
+        </a>
+
+
+
+        
+
+
+
+        <a href="https://wa.me/62895327413526"
+           target="_blank" rel="noopener noreferrer"
+           class="contact-item">
+            <span>☏</span>
+            <div>
+                <h3>WhatsApp</h3>
+                <p>0895327413526</p>
+            </div>
+        </a>
+
+        <a href="https://github.com/Darraw0"
+           target="_blank" rel="noopener noreferrer"
+           class="contact-item">
+            <span>🔗‍️</span>
+            <div>
+                <h3>Github</h3>
+                <p>github.com/Darraw0</p>
+            </div>
+        </a>
+
+
+
+
+    </div>
+
+    <!-- FORM PESAN -->
+    <div class="contact-form">
+        <h3>Kirim Pesan</h3>
+        
+        <form action="https://formsubmit.co/indahnc1908@gmail.com" method="POST">
+
+
+            <input type="text"
+                   name="name"
+                   placeholder="Nama lengkap"
+                   required>
+
+            <input type="email"
+                   name="email"
+                   placeholder="Alamat email"
+                   required>
+
+            <input type="text"
+                   name="subject"
+                   placeholder="Subjek pesan"
+                   required>
+
+            <textarea name="message"
+                      placeholder="Tulis pesan kamu di sini..."
+                      rows="5"
+                      required></textarea>
+
+            <input type="hidden" name="_captcha" value="false">
+
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- FOOTER PORTOFOLIO -->
+<footer class="portfolio-footer" id="footer">
+    <h2 class="footer-logo">
+    </h2>
+
+    <p class="footer-message">
+        Terus belajar, berkarya, dan menjadi versi terbaik
+        dari diri sendiri 
+    </p>
+
+    <p class="footer-copyright">
+        © 2026 Indah Nur Cahyani
+    </p>
+</footer>
+
+<!-- TOMBOL KEMBALI KE ATAS -->
+<button
+    type="button"
+    class="back-to-top"
+    id="backToTop"
+    aria-label="Kembali ke atas"
+    title="Kembali ke atas"
+>
+    ↑
+</button>
